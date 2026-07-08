@@ -142,13 +142,13 @@ function SpaceDetailContent() {
           value={instructions}
           onChange={(e) => setInstructions(e.target.value)}
           rows={4}
-          placeholder="e.g. You are a helpful assistant for internal HR policy questions."
+          placeholder="e.g., you are a helpful assistant for customer's queries"
           className="w-full rounded border px-3 py-2"
         />
         <button
           onClick={handleSaveInstructions}
           disabled={savingInstructions}
-          className="mt-2 rounded bg-black px-4 py-2 text-sm text-white disabled:opacity-50"
+          className="mt-2 rounded bg-[#ff4400] px-4 py-2 text-sm text-white disabled:opacity-50"
         >
           {savingInstructions ? "Saving..." : "Save instructions"}
         </button>
@@ -156,12 +156,13 @@ function SpaceDetailContent() {
 
       <section className="mb-8">
         <h2 className="mb-2 font-semibold">Documents</h2>
+        <p className="mb-2 text-xs text-gray-500">Supported formats: .txt, .md, .pdf</p>
         <div className="mb-3 flex gap-2">
           <input ref={fileInputRef} type="file" accept=".txt,.md,.pdf" className="flex-1 text-sm" />
           <button
             onClick={handleUpload}
             disabled={uploading}
-            className="rounded bg-black px-4 py-2 text-sm text-white disabled:opacity-50"
+            className="rounded bg-[#ff4400] px-4 py-2 text-sm text-white disabled:opacity-50"
           >
             {uploading ? "Uploading..." : "Upload"}
           </button>
@@ -206,7 +207,7 @@ function SpaceDetailContent() {
           <button
             onClick={handleCreateChat}
             disabled={creatingChat}
-            className="rounded bg-black px-3 py-1 text-sm text-white disabled:opacity-50"
+            className="rounded bg-[#ff4400] px-3 py-1 text-sm text-white disabled:opacity-50"
           >
             + New chat
           </button>
@@ -219,7 +220,8 @@ function SpaceDetailContent() {
               <li key={chat.id}>
                 <Link
                   href={`/spaces/${spaceId}/chats/${chat.id}`}
-                  className="block rounded border px-3 py-2 text-sm hover:bg-gray-50"
+                  className="block rounded border px-3 py-2 text-sm hover:bg-[#ff4400]"
+                  style={{ color: "#3d3d3d" }}
                 >
                   {chat.title}
                 </Link>

@@ -1,19 +1,31 @@
 from fastapi import APIRouter, Depends
 
-from app.auth import get_current_user_id
+from app.auth import get_current_user_id, get_current_user_is_guest
 from app.db import run_query, supabase
 from app.models import Space, SpaceCreate, SpaceUpdate
+from app.services.cleanup import delete_expired_guest_spaces
 from app.services.ownership import get_owned_space
 
 router = APIRouter(prefix="/spaces", tags=["spaces"])
 
 
 @router.post("", response_model=Space, status_code=201)
-async def create_space(body: SpaceCreate, user_id: str = Depends(get_current_user_id)):
+async def create_space(
+    body: SpaceCreate,
+    user_id: str = Depends(get_current_user_id),
+    is_guest: bool = Depends(get_current_user_is_guest),
+):
     def _insert():
         return (
             supabase.table("spaces")
-            .insert({"user_id": user_id, "name": body.name, "instructions": body.instructions})
+            .insert(
+                {
+                    "user_id": user_id,
+                    "name": body.name,
+                    "instructions": body.instructions,
+                    "is_guest": is_guest,
+                }
+            )
             .execute()
         )
 
@@ -23,6 +35,8 @@ async def create_space(body: SpaceCreate, user_id: str = Depends(get_current_use
 
 @router.get("", response_model=list[Space])
 async def list_spaces(user_id: str = Depends(get_current_user_id)):
+    await delete_expired_guest_spaces(user_id)
+
     def _query():
         return (
             supabase.table("spaces")

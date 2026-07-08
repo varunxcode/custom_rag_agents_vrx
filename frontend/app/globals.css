@@ -4,5 +4,43 @@
 
 body {
   color: #171717;
-  background: #ffffff;
+  background: #d2dce2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #701e00;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  background: #acb7be;
+  color: #3d3d3d;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
+  color: #6b7280;
+}
+
+input[type="file"] {
+  color: #3d3d3d;
+}
+
+input[type="file"]::file-selector-button {
+  background: #ff4400;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
 }

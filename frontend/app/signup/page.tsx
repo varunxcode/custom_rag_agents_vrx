@@ -57,7 +57,7 @@ export default function SignupPage() {
         <button
           type="submit"
           disabled={loading}
-          className="rounded bg-black px-3 py-2 text-white disabled:opacity-50"
+          className="rounded bg-[#ff4400] px-3 py-2 text-white disabled:opacity-50"
         >
           {loading ? "Signing up..." : "Sign up"}
         </button>

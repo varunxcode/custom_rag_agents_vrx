@@ -19,6 +19,7 @@ class Space(BaseModel):
     user_id: str
     name: str
     instructions: str
+    is_guest: bool = False
     created_at: datetime
 
 

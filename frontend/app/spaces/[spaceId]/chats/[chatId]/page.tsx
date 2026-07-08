@@ -133,13 +133,13 @@ function ChatContent() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask a question about this Space's documents..."
+          placeholder="ask a question"
           className="flex-1 rounded border px-3 py-2"
         />
         <button
           type="submit"
           disabled={sending}
-          className="rounded bg-black px-4 py-2 text-white disabled:opacity-50"
+          className="rounded bg-[#ff4400] px-4 py-2 text-white disabled:opacity-50"
         >
           {sending ? "Sending..." : "Send"}
         </button>

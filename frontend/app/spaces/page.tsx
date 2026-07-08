@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import AuthGuard from "@/components/AuthGuard";
+import GuestBanner from "@/components/GuestBanner";
 import Header from "@/components/Header";
 import { apiFetch } from "@/lib/api";
 import { Space } from "@/lib/types";
@@ -52,12 +53,13 @@ function SpacesContent() {
   return (
     <main className="mx-auto max-w-2xl p-6">
       <Header />
-      <h1 className="mb-4 text-xl font-semibold">Your Spaces</h1>
+      <GuestBanner />
+      <h1 className="mb-4 text-xl font-semibold">Your RAG Chatbots</h1>
 
       <form onSubmit={handleCreate} className="mb-6 flex gap-2">
         <input
           type="text"
-          placeholder="New space name (e.g. HR Policies)"
+          placeholder="enter your chatbot name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="flex-1 rounded border px-3 py-2"
@@ -65,7 +67,7 @@ function SpacesContent() {
         <button
           type="submit"
           disabled={creating}
-          className="rounded bg-black px-4 py-2 text-white disabled:opacity-50"
+          className="rounded bg-[#ff4400] px-4 py-2 text-white disabled:opacity-50"
         >
           Create
         </button>
@@ -75,16 +77,16 @@ function SpacesContent() {
       {loading ? (
         <p className="text-gray-500">Loading...</p>
       ) : spaces.length === 0 ? (
-        <p className="text-gray-500">No spaces yet — create one above.</p>
+        <p className="text-gray-500">No chatbots yet — create one above.</p>
       ) : (
         <ul className="flex flex-col gap-2">
           {spaces.map((space) => (
             <li key={space.id}>
               <Link
                 href={`/spaces/${space.id}`}
-                className="block rounded border px-4 py-3 hover:bg-gray-50"
+                className="block rounded border px-4 py-3 hover:bg-[#ff4400]"
               >
-                <span className="font-medium">{space.name}</span>
+                <span className="font-medium" style={{ color: "#701e00" }}>{space.name}</span>
               </Link>
             </li>
           ))}

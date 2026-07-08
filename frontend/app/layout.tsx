@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
+
 export const metadata: Metadata = {
-  title: "RAG Spaces",
-  description: "Create scoped RAG agents over your own documents.",
+  title: "RAG Chatbots",
+  description: "Create scoped RAG chatbots over your own documents.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={roboto.className}>{children}</body>
     </html>
   );
 }
