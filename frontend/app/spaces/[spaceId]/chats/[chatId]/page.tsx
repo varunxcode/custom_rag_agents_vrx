@@ -92,7 +92,7 @@ function ChatContent() {
   }
 
   return (
-    <main className="mx-auto flex h-screen max-w-2xl flex-col p-6">
+    <main className="mx-auto flex h-full w-full max-w-2xl flex-1 flex-col p-6">
       <Header />
       {error && <p className="mb-2 text-sm text-red-600">{error}</p>}
 
