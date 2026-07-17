@@ -22,7 +22,7 @@ export default function Header({ title }: { title?: string }) {
 
   return (
     <header className="mb-6 flex items-center justify-between border-b pb-4">
-      <Link href="/spaces" className="text-lg font-semibold" style={{ color: "#701e00" }}>
+      <Link href="/spaces" className="text-lg font-semibold" style={{ color: "#ff4400" }}>
         {title ?? "Create Custom RAG Chatbots"}
       </Link>
       <button onClick={handleLogout} className="text-sm hover:underline" style={{ color: "#ff4400" }}>

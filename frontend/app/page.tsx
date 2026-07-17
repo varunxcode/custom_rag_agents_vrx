@@ -13,5 +13,5 @@ export default function HomePage() {
     });
   }, [router]);
 
-  return <div className="p-8 text-gray-500">Loading...</div>;
+  return <div className="p-8 text-gray-500">Loading... please wait a minute</div>;
 }

@@ -100,7 +100,7 @@ function ChatContent() {
         {messages.map((message) => (
           <div
             key={message.id}
-            className={`rounded px-4 py-2 text-sm ${
+            className={`rounded px-4 py-2 text-sm text-black ${
               message.role === "user" ? "ml-12 bg-gray-100" : "mr-12 bg-blue-50"
             }`}
           >

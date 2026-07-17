@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-  color: #171717;
-  background: #d2dce2;
+  color: #ffffff;
+  background: #232425;
 }
 
 h1,
@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #701e00;
+  color: #ff4400;
 }
 
 input[type="text"],
@@ -32,7 +32,7 @@ textarea::placeholder {
 }
 
 input[type="file"] {
-  color: #3d3d3d;
+  color: #ffffff;
 }
 
 input[type="file"]::file-selector-button {

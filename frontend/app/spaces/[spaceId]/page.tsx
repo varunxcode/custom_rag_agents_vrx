@@ -126,7 +126,7 @@ function SpaceDetailContent() {
     return (
       <main className="mx-auto max-w-2xl p-6">
         <Header />
-        <p className="text-gray-500">Loading...</p>
+        <p className="text-gray-500">Loading... please wait a minute</p>
       </main>
     );
   }
@@ -221,7 +221,7 @@ function SpaceDetailContent() {
                 <Link
                   href={`/spaces/${spaceId}/chats/${chat.id}`}
                   className="block rounded border px-3 py-2 text-sm hover:bg-[#ff4400]"
-                  style={{ color: "#3d3d3d" }}
+                  style={{ color: "#ffffff" }}
                 >
                   {chat.title}
                 </Link>

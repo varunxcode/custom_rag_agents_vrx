@@ -75,7 +75,7 @@ function SpacesContent() {
 
       {error && <p className="mb-4 text-sm text-red-600">{error}</p>}
       {loading ? (
-        <p className="text-gray-500">Loading...</p>
+        <p className="text-gray-500">Loading... please wait a minute</p>
       ) : spaces.length === 0 ? (
         <p className="text-gray-500">No chatbots yet — create one above.</p>
       ) : (
@@ -84,9 +84,9 @@ function SpacesContent() {
             <li key={space.id}>
               <Link
                 href={`/spaces/${space.id}`}
-                className="block rounded border px-4 py-3 hover:bg-[#ff4400]"
+                className="group block rounded border px-4 py-3 hover:bg-[#ff4400]"
               >
-                <span className="font-medium" style={{ color: "#701e00" }}>{space.name}</span>
+                <span className="font-medium text-[#ff4400] group-hover:text-white">{space.name}</span>
               </Link>
             </li>
           ))}

@@ -78,7 +78,7 @@ export default function LoginPage() {
         type="button"
         onClick={handleGuest}
         disabled={guestLoading}
-        className="mt-2 w-full rounded border px-3 py-2 text-sm disabled:opacity-50"
+        className="mt-2 w-full rounded border px-3 py-2 text-sm hover:bg-[#ff4400] hover:text-white disabled:opacity-50"
       >
         {guestLoading ? "Starting..." : "Continue as guest"}
       </button>
