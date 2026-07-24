@@ -52,6 +52,12 @@ function SpacesContent() {
 
   return (
     <main className="mx-auto max-w-2xl p-6">
+      <Link
+        href="/learn"
+        className="mb-4 inline-block rounded border px-3 py-2 text-sm hover:bg-[#ff4400] hover:text-white"
+      >
+        learn how to use this
+      </Link>
       <Header />
       <GuestBanner />
       <h1 className="mb-4 text-xl font-semibold">Your RAG Chatbots</h1>
