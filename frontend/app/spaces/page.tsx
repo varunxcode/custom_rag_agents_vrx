@@ -56,7 +56,7 @@ function SpacesContent() {
         href="/learn"
         className="mb-4 inline-block rounded border px-3 py-2 text-sm hover:bg-[#ff4400] hover:text-white"
       >
-        learn how to use this
+        how this works
       </Link>
       <Header />
       <GuestBanner />
